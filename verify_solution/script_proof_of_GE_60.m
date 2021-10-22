@@ -36,6 +36,7 @@ y = []; % Data container
 % timestep = 1;
 eps_all = 0;
 for timestep = 1:1e4
+  timestep
   [a, d_N, d_infty] = getting_the_solution_timestepping(N,n,tspan,a0,angle,rigorous);% Output is one-sided Chebyshev!
   disp(['delta_N = ',num2str(d_N)])
   disp(['delta_tail = ',num2str(d_infty)])

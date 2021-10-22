@@ -40,6 +40,7 @@ y = []; % Data container
 eps_all = 0;
 % success_flag = 0;
 for timestep = 1:1e4
+  timestep
   if stepsize<1e-15
     break
   end
