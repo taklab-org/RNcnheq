@@ -1,9 +1,9 @@
-% After 1852 (->51) steps, global existence is proved based on Theorem 6.1
-% Execute time is about 8402.909 (->149.009757) sec
+% After 75 steps, global existence is proved based on Theorem 6.1
+% Execute time is about 172.138798 sec (Core i9-10900K)
 
 %% preliminary
 clear
-addpath('../chebfun-master/')
+% addpath('../chebfun-master/')
 addpath('../verify_defect/')
 addpath('../variational_problem/')
 % addpath('../../toolbox/chebfun-master/')
@@ -30,7 +30,7 @@ else
   y_local = zeros(1,10);
 end
 
-y = []; % Data container
+y = intval([]); % Data container
 
 %% getting approximate solution and residual bounds
 % timestep = 1;
@@ -189,7 +189,7 @@ for timestep = 1:1e4
   y_local(9) = d_all;
   y_local(10) = err;
   % y(10) = sup(min(xx));
-  y = [y;y_local];
+  y(:,end+1) = y_local;
   
   if success_GE>0
     break
@@ -204,4 +204,4 @@ end
 success_GE
 % printresult_timestepping
 % save('data_GEv1.mat','y','t')
-save data_GE_30.mat
+% save data_GE_30.mat

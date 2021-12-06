@@ -29,8 +29,8 @@ addpath('variational_problem/')
 ```
 % script_proof_upper_bound_blowup % uncomment when you execute the proof of Theorem 1.1
 % script_proof_lower_bound_blowup % uncomment when you execute the proof of Theorem 1.1
-script_plot_fig3
 script_plot_fig4
+script_plot_fig5
 ```
 
 ### Proof of Theorem 1.2
@@ -40,7 +40,7 @@ script_plot_fig4
 % script_proof_of_GE_45 % uncomment when you execute the proof of Global existence (GE) in the case of \theta = 45
 % script_proof_of_GE_30 % uncomment when you execute the proof of Global existence (GE) in the case of \theta = 30
 % script_proof_of_GE_15 % uncomment when you execute the proof of Global existence (GE) in the case of \theta = 15
-script_plot_fig5
+script_plot_fig6
 ```
 ---
 
