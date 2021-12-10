@@ -1,5 +1,5 @@
-% After 123 steps, global existence is proved based on Theorem 6.1
-% Execute time is about 380.4356 sec (Core i9-10900K)
+% After 85 steps, global existence is proved based on Theorem 6.1
+% Execute time is about 190.309807 sec (Dec 9, 2021. Core i9-10900K)
 
 %% preliminary
 clear
@@ -12,8 +12,6 @@ addpath('../variational_problem/')
 
 N = 14; % # of Fourier coefficients
 n = 13; % # of Chebyshev coefficients
-% N = 20; % # of Fourier coefficients
-% n = 21; % # of Chebyshev coefficients
 stepsize = 0.08/2^5; % length of time step
 tspan = [0,stepsize];
 angle = 60;
@@ -30,7 +28,7 @@ else
   y_local = zeros(1,10);
 end
 
-y = intval([]); % Data container
+y = []; % Data container
 
 %% getting approximate solution and residual bounds
 % timestep = 1;
@@ -186,7 +184,7 @@ for timestep = 1:1e4
   y_local(9) = d_all;
   y_local(10) = err;
   % y(10) = sup(min(xx));
-  y(:,end+1) = y_local;
+  y = [y;y_local];
   
   if success_GE>0
     break
@@ -201,5 +199,4 @@ end
 success_GE
 
 % printresult_timestepping
-% save('data_GEv1.mat','y','t')
-% save data_GE_60.mat
+save data_GE_60.mat

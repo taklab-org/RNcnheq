@@ -1,7 +1,7 @@
 %% preliminary
 clf
 % addpath('../../toolbox/chebfun-master/')
-% addpath('../verify_defect/')
+addpath('../verify_defect/')
 
 N = 25; % # of Fourier coefficients
 n = 13; % # of Chebyshev coefficients
